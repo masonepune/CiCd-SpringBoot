@@ -1,5 +1,6 @@
 name: Spring Boot CI/CD Pipeline
 
+# thực hiện build và test khi có sự kiện push hoặc pull request vào nhánh main
 on:
   push:
     branches: [ "main" ]
@@ -43,7 +44,7 @@ jobs:
           password: "Phuong12pl"
 
       - name: Build Docker image
-        run: docker build -t 23a4040118/springboot-cicd-demo:latest
+        run:  docker-compose up -d
 
       - name: Push Docker image
         run: docker push 23a4040118/springboot-cicd-demo:latest
