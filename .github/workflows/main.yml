@@ -21,7 +21,8 @@ jobs:
           java-version: 17
 
       - name: Build with Maven
-        run: mvn clean package
+      working-directory: ./springboot-cicd-demo
+      run: mvn -B package --file pom.xml
 
       - name: Run Unit Tests
         run: mvn test
