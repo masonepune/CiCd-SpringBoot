@@ -44,7 +44,9 @@ jobs:
           password: "Phuong12pl"
 
       - name: Build Docker image
-        run:  docker-compose up -d
+        working-directory: ./springboot-cicd-demo
+        run: docker build -t 23a4040118/springboot-cicd-demo:latest .
 
       - name: Push Docker image
+        working-directory: ./springboot-cicd-demo
         run: docker push 23a4040118/springboot-cicd-demo:latest
