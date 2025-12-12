@@ -39,11 +39,11 @@ jobs:
       - name: Login to DockerHub
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          username: "23a4040118"
+          password: "Phuong12pl"
 
       - name: Build Docker image
-        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/springboot-cicd-demo:latest .
+        run: docker build -t 23a4040118/springboot-cicd-demo:latest .
 
       - name: Push Docker image
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/springboot-cicd-demo:latest
+        run: docker push 23a4040118/springboot-cicd-demo:latest

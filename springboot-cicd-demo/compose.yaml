@@ -1,1 +1,12 @@
 services:
+  app:
+    image: springboot-cicd-demo:latest   # image từ Docker Hub
+    container_name: springboot-cicd-demo
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - JAVA_OPTS=
+    restart: always

@@ -19,6 +19,6 @@ class HelloController {
 
     @GetMapping("/hello")
     public String hello() {
-        return "Hello CI/CD with GitHub Actions + Docker Udate";
+        return "Hello CI/CD with GitHub Actions + Docker!";
     }
 }
