@@ -42,8 +42,8 @@ pipeline {
             steps {
             dir('springboot-cicd-demo'){
                     bat '''
-                    docker stop springboot-demo || exit 0
-                    docker rm springboot-demo || exit 0
+                    docker stop springboot-cicd-demo || exit 0
+                    docker rm springboot-cicd-demo || exit 0
 
                     docker run -d ^
                       --name springboot-demo ^
