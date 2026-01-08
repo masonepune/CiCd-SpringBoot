@@ -37,6 +37,22 @@ pipeline {
                   }
               }
         }
+
+        stage('Run Docker Container') {
+            steps {
+            dir('springboot-cicd-demo'){
+                    bat '''
+                    docker stop springboot-demo || exit 0
+                    docker rm springboot-demo || exit 0
+
+                    docker run -d ^
+                      --name springboot-demo ^
+                      -p 8080:8080 ^
+                      %IMAGE_NAME%:%IMAGE_TAG%
+                    '''
+                }
+            }
+        }
     }
 
   post {
