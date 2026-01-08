@@ -11,13 +11,17 @@ pipeline {
 
         stage('Build & Test') {
             steps {
-                bat 'mvn clean test'
+                dir('springboot-cicd-demo'){
+                    bat 'mvn clean test'
+                }
             }
         }
 
         stage('Package JAR') {
             steps {
-                bat 'mvn clean package -DskipTests'
+            dir('springboot-cicd-demo'){
+                    bat 'mvn clean package -DskipTests'
+                }
             }
         }
 
