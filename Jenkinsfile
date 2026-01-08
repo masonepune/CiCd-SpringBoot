@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    environment {
+        IMAGE_NAME = 'springboot-demo'
+        IMAGE_TAG  = 'latest'
+    }
+
     stages {
 
         stage('Checkout Source') {
