@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = 'springboot-demo'
+        IMAGE_NAME = 'springboot-cicd-demo'
         IMAGE_TAG  = 'latest'
     }
 
@@ -31,10 +31,13 @@ pipeline {
         }
 
           stage('Build Docker Image') {
-                    steps {
-                        bat 'docker build -t %IMAGE_NAME%:%IMAGE_TAG% .'
-                    }
-                }
+              dir('springboot-cicd-demo'){
+                      steps {
+                          bat 'docker build -t %IMAGE_NAME%:%IMAGE_TAG% .'
+                      }
+              }
+
+          }
     }
 
    post {
