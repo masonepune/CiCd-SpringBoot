@@ -33,10 +33,10 @@ pipeline {
                 }
     }
 
-    post {
+   post {
         success {
-            archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
-            echo '✅ Build JAR SUCCESS'
+            bat 'docker images | grep $IMAGE_NAME'
+            echo '🐳 Docker image build SUCCESS'
         }
 
         failure {
