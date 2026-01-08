@@ -6,6 +6,15 @@ pipeline {
     }
 
     stages {
+        stage('Build') {
+            steps {
+                echo 'Triggered by GitHub push'
+            }
+        }
+    }
+
+
+    stages {
 
         stage('Checkout Source') {
             steps {
