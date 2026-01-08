@@ -31,10 +31,10 @@ pipeline {
         }
 
         stage('Build Docker Image') {
-              dir('springboot-cicd-demo'){
-                      steps {
-                          bat 'docker build -t %IMAGE_NAME%:%IMAGE_TAG% .'
-                      }
+              steps {
+                  dir('springboot-cicd-demo'){
+                      bat 'docker build -t %IMAGE_NAME%:%IMAGE_TAG% .'
+                  }
               }
         }
     }
