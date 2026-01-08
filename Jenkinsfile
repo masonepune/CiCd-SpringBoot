@@ -39,14 +39,18 @@ pipeline {
         }
     }
 
-   post {
-        success {
-            bat 'docker images | grep $IMAGE_NAME'
-            echo '🐳 Docker image build SUCCESS'
-        }
+  post {
+      success {
+          script {
+              dir('springboot-cicd-demo') {
+                  bat 'docker images | findstr %IMAGE_NAME%'
+                  echo '🐳 Docker image build SUCCESS'
+              }
+          }
+      }
 
-        failure {
-            echo '❌ Build FAILED'
-        }
-   }
+      failure {
+          echo '❌ Build FAILED'
+      }
+  }
 }
