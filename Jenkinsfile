@@ -53,7 +53,7 @@ pipeline {
                     docker rm springboot-cicd-demo || exit 0
 
                     docker run -d ^
-                      --name springboot-demo ^
+                      --name springboot-cicd-demo ^
                       %IMAGE_NAME%:%IMAGE_TAG%
                     '''
                 }
