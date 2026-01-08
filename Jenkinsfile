@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     tools {
-        maven 'maven3'     // cấu hình trong Jenkins Global Tool Configuration
-        jdk 'jdk17'        // hoặc jdk8 / jdk11 tùy project
+        maven 'maven'
+        jdk 'jdk'
     }
 
     stages {
