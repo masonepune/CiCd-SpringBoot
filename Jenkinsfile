@@ -47,7 +47,6 @@ pipeline {
 
                     docker run -d ^
                       --name springboot-demo ^
-                      -p 8080:8080 ^
                       %IMAGE_NAME%:%IMAGE_TAG%
                     '''
                 }
