@@ -5,19 +5,19 @@ pipeline {
 
         stage('Checkout Source') {
             steps {
-                checkout main
+                checkout scm
             }
         }
 
         stage('Build & Test') {
             steps {
-                sh 'mvn clean test'
+                bat 'mvn clean test'
             }
         }
 
         stage('Package JAR') {
             steps {
-                sh 'mvn clean package -DskipTests'
+                bat 'mvn clean package -DskipTests'
             }
         }
 
