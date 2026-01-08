@@ -53,7 +53,7 @@ pipeline {
                     docker rm springboot-cicd-demo || exit 0
 
                     docker run -d ^
-                      --name springboot-cicd-demo ^
+                      --name springboot-demo ^
                       %IMAGE_NAME%:%IMAGE_TAG%
                     '''
                 }
@@ -66,7 +66,7 @@ pipeline {
           script {
               dir('springboot-cicd-demo') {
                   bat 'docker images | findstr %IMAGE_NAME%'
-                  echo '🐳 Docker image build SUCCESS'
+                  echo 'Docker image build SUCCESS'
               }
           }
       }
