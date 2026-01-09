@@ -10,8 +10,8 @@ pipeline {
         stage('Cleanup Docker Container') {
             steps {
                 bat '''
-                docker stop springboot-cicd-demo || exit 0
-                docker rm springboot-cicd-demo || exit 0
+                docker stop springboot-demo || exit 0
+                docker rm springboot-demo || exit 0
                 '''
             }
         }
