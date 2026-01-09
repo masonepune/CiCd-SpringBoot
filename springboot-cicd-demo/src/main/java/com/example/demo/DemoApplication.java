@@ -19,6 +19,6 @@ class HelloController {
 
     @GetMapping("/hello")
     public String hello() {
-        return "Hello CI/CD with jenkins + Docker updated!";
+        return "Hello CI/CD with jenkins + Docker updated!" ;
     }
 }
