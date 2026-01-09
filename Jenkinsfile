@@ -50,6 +50,7 @@ pipeline {
             dir('springboot-cicd-demo'){
                     bat '''
                     docker run -d ^
+                      -p 8081:8080 ^
                       --name springboot-demo ^
                       %IMAGE_NAME%:%IMAGE_TAG%
                     '''
